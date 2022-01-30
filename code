@@ -1,0 +1,61 @@
+# 🚨 Don't change the code below 👇
+print("Welcome to Python Pizza Deliveries!")
+#size = input("What size pizza do you want? S, M, or L ")
+#add_pepperoni = input("Do you want pepperoni? Y or N ")
+#extra_cheese = input("Do you want extra cheese? Y or N ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+bill = 0
+choice = []
+size = ""
+sizeList = ["S","M","L"]
+while size not in sizeList:
+  size = input("What size pizza do you want? S, M, or L\n")
+  size = size.upper()
+  if size == "S":
+    bill += 15
+    sizeBill = 15
+  elif size == "M":
+    bill += 20
+    sizeBill = 20
+  elif size == "L":
+    bill += 25
+    sizeBill = 25
+  else:
+    print("Invalid response.\nPlease choose again (S for small, M for medium, and L for large\n")
+
+pepperoni = ""
+pepperoniList = ["Y","N"]
+while pepperoni not in pepperoniList:
+  add_pepperoni = input("Do you want pepperoni? Y or N\n")
+  pepperoni = add_pepperoni.upper()
+  if pepperoni == "Y":
+    if size == "S":
+      bill += 2
+      pepBill = 2
+    else:
+      bill += 3
+      pepBill = 3
+  elif pepperoni == "N":
+    bill += 0
+    pepBill = 0
+  else:
+    print("Invalid response.\nPlease choose Y for yes or N for no\n")
+
+cheese = ""
+cheeseList = ["Y","N"]
+while cheese not in cheeseList:
+  extra_cheese = input("Do you want extra cheese? Y or N\n")
+  cheese = extra_cheese.upper()
+  if cheese == "Y":
+    bill += 1
+    cheeseBill = 1
+  elif cheese == "N":
+    bill +=0
+    cheeseBill = 0
+  else:
+    print("Invalid response.\nPlease choose Y for yes or N for no\n")
+
+print(f"Your pizza order:\nSize: {size} ${sizeBill}\nAdd Pepperoni: {pepperoni} ${pepBill}\nExtra Cheese: {cheese} ${cheeseBill}\n")
+print(f"Your pizza costs ${bill}")
