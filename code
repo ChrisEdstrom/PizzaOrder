@@ -1,3 +1,5 @@
+import os
+import time
 # 🚨 Don't change the code below 👇
 print("Welcome to Python Pizza Deliveries!")
 #size = input("What size pizza do you want? S, M, or L ")
@@ -24,6 +26,9 @@ while size not in sizeList:
     sizeBill = 25
   else:
     print("Invalid response.\nPlease choose again (S for small, M for medium, and L for large\n")
+    time.sleep(1)
+    os.system('clear')
+
 
 pepperoni = ""
 pepperoniList = ["Y","N"]
@@ -42,6 +47,8 @@ while pepperoni not in pepperoniList:
     pepBill = 0
   else:
     print("Invalid response.\nPlease choose Y for yes or N for no\n")
+    time.sleep(1)
+    os.system('clear')
 
 cheese = ""
 cheeseList = ["Y","N"]
@@ -56,6 +63,8 @@ while cheese not in cheeseList:
     cheeseBill = 0
   else:
     print("Invalid response.\nPlease choose Y for yes or N for no\n")
-
+    time.sleep(1)
+    os.system('clear')
+    
 print(f"Your pizza order:\nSize: {size} ${sizeBill}\nAdd Pepperoni: {pepperoni} ${pepBill}\nExtra Cheese: {cheese} ${cheeseBill}\n")
 print(f"Your pizza costs ${bill}")
